@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  distDir: 'dist',
+  // Removed static export configuration for server-side functionality
   images: {
     unoptimized: true,
     domains: [
@@ -33,6 +31,10 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+  },
+  // Enable experimental features for Clerk
+  experimental: {
+    serverComponentsExternalPackages: ["@clerk/nextjs"],
   },
 };
 
